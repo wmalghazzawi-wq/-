@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نانو عالم — استكشاف الكون على المقياس النانومتري</title>
+  <meta name="description"
+    content="اكتشف تقنية النانو: أكاسيد المعادن، أنابيب الكربون النانوية، النقاط الكمومية والمزيد. رحلة عميقة في عالم المواد النانوية." />
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fas fa-atom"></i></span>
+        <span class="logo-text">عالم <span class="accent">النانو</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+        <li><a href="nanomaterials.html" class="nav-link">المواد النانوية</a></li>
+        <li><a href="applications.html" class="nav-link">التطبيقات</a></li>
+        <li><a href="about.html" class="nav-link">حول المشروع</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub animate-in delay-1">مرحبًا بك في حدود العلم</p>
+      <h1 class="hero-title animate-in delay-2">
+        استكشاف<br>
+        <span class="gradient-text">الكون النانوي</span>
+      </h1>
+      <p class="hero-desc animate-in delay-3">
+        على مقياس <strong>١ إلى ١٠٠ نانومتر</strong>، تتبع المادة قواعد مختلفة كليًا.
+        اكتشف العالم الثوري لتقنية النانو، من النقاط الكمومية إلى أنابيب الكربون النانوية.
+      </p>
+      <div class="hero-btns animate-in delay-4">
+        <a href="nanomaterials.html" class="btn btn-primary">
+          <i class="fas fa-flask"></i> استكشف المواد النانوية
+        </a>
+        <a href="about.html" class="btn btn-outline">
+          <i class="fas fa-info-circle"></i> اعرف المزيد
+        </a>
+        <a href="#ai-predict" class="btn btn-outline">
+          <i class="fas fa-brain"></i> جرّب التنبؤ بالصور
+        </a>
+      </div>
+      <div class="hero-stats animate-in delay-5">
+        <div class="stat">
+          <span class="stat-num" data-target="100">0</span><span class="stat-unit">nm</span>
+          <p>أقصى حجم نانوي</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="10">0</span><span class="stat-unit">+</span>
+          <p>فئات المواد</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="500">0</span><span class="stat-unit">B$</span>
+          <p>قيمة السوق العالمية</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="atom-ring ring-1"></div>
+      <div class="atom-ring ring-2"></div>
+      <div class="atom-ring ring-3"></div>
+      <div class="atom-nucleus">
+        <i class="fas fa-atom"></i>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+      <span>مرر للاستكشاف</span>
+    </div>
+  </section>
+
+  <!-- What is Nanotechnology Section -->
+  <section class="section what-is" id="what-is">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">الأساسيات</span>
+        <h2 class="section-title">ما هي <span class="gradient-text">تقنية النانو؟</span></h2>
+        <p class="section-desc">
+          تقنية النانو هي علم التلاعب بالمادة على نطاق صغير بشكل لا يُصدق — بين <strong>١ و١٠٠ نانومتر</strong>.
+          النانومتر الواحد يساوي جزءًا من المليار من المتر. على هذا المقياس، تُظهر المواد ظواهر كمومية وسطحية فريدة
+          تختلف جذريًا عن خصائصها في الحجم الكبير.
+        </p>
+      </div>
+      <div class="info-cards">
+        <div class="info-card glass-card">
+          <div class="card-icon"><i class="fas fa-ruler-horizontal"></i></div>
+          <h3>منظور الحجم</h3>
+          <p>شعرة الإنسان عرضها ~٨٠٬٠٠٠ نانومتر. خيط الحمض النووي ~٢ نانومتر. تقنية النانو تعمل بين هذين المقياسين.</p>
+        </div>
+        <div class="info-card glass-card">
+          <div class="card-icon"><i class="fas fa-bolt"></i></div>
+          <h3>التأثيرات الكمومية</h3>
+          <p>على المقياس النانوي، تُظهر المواد خصائص ميكانيكا الكم، مما يتيح سلوكيات كهربائية وبصرية ومغناطيسية فريدة.
+          </p>
+        </div>
+        <div class="info-card glass-card">
+          <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>هيمنة السطح</h3>
+          <p>تمتلك الجسيمات النانوية نسبة سطح إلى حجم ضخمة، مما يزيد تفاعليتها وتفاعلها مع البيئة بشكل كبير.</p>
+        </div>
+        <div class="info-card glass-card">
+          <div class="card-icon"><i class="fas fa-dna"></i></div>
+          <h3>التوافق الحيوي</h3>
+          <p>يمكن للمواد النانوية التفاعل مع الجزيئات البيولوجية، مفتوحةً أبوابًا لتوصيل الأدوية والتشخيص الثوري.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nanomaterial Types Section -->
+  <section class="section materials-preview" id="materials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">الفئات</span>
+        <h2 class="section-title">أبرز <span class="gradient-text">المواد النانوية</span></h2>
+        <p class="section-desc">انقر على أي مادة لاكتشاف بنيتها وخصائصها وتطبيقاتها.</p>
+      </div>
+      <div class="materials-grid">
+
+        <a href="nanomaterials.html#carbon-nanotubes" class="material-card glass-card" data-color="#00f7ff">
+          <div class="material-icon-wrap" style="--clr:#00f7ff">
+            <i class="fas fa-circle-nodes"></i>
+          </div>
+          <h3>أنابيب الكربون النانوية</h3>
+          <p>هياكل كربونية أسطوانية بمقاومة ميكانيكية وتوصيل كهربائي استثنائيين.</p>
+          <div class="tags">
+            <span class="tag">بنية أحادية البعد</span>
+            <span class="tag">مقاومة عالية</span>
+          </div>
+          <span class="card-arrow"><i class="fas fa-arrow-left"></i></span>
+        </a>
+
+        <a href="nanomaterials.html#metal-oxides" class="material-card glass-card" data-color="#ff6b35">
+          <div class="material-icon-wrap" style="--clr:#ff6b35">
+            <i class="fas fa-cubes"></i>
+          </div>
+          <h3>جسيمات أكاسيد المعادن النانوية</h3>
+          <p>TiO₂ وZnO وFe₃O₄ والمزيد — جسيمات متعددة الاستخدامات بخصائص ضوئية ومغناطيسية.</p>
+          <div class="tags">
+            <span class="tag">بنية صفرية البعد</span>
+            <span class="tag">تحفيز ضوئي</span>
+          </div>
+          <span class="card-arrow"><i class="fas fa-arrow-left"></i></span>
+        </a>
+
+        <a href="nanomaterials.html#graphene" class="material-card glass-card" data-color="#a855f7">
+          <div class="material-icon-wrap" style="--clr:#a855f7">
+            <i class="fas fa-border-all"></i>
+          </div>
+          <h3>الجرافين</h3>
+          <p>طبقة ذرية واحدة من الكربون في شبكة سداسية — أرق وأقوى مادة معروفة.</p>
+          <div class="tags">
+            <span class="tag">بنية ثنائية البعد</span>
+            <span class="tag">موصل</span>
+          </div>
+          <span class="card-arrow"><i class="fas fa-arrow-left"></i></span>
+        </a>
+
+        <a href="nanomaterials.html#quantum-dots" class="material-card glass-card" data-color="#22c55e">
+          <div class="material-icon-wrap" style="--clr:#22c55e">
+            <i class="fas fa-sun"></i>
+          </div>
+          <h3>النقاط الكمومية</h3>
+          <p>بلورات نانوية شبه موصلة تُصدر ألوانًا مختلفة بحسب حجمها، مُحدثةً ثورة في تقنية الشاشات.</p>
+          <div class="tags">
+            <span class="tag">بنية صفرية البعد</span>
+            <span class="tag">مُضيئة</span>
+          </div>
+          <span class="card-arrow"><i class="fas fa-arrow-left"></i></span>
+        </a>
+
+        <a href="nanomaterials.html#dendrimers" class="material-card glass-card" data-color="#f59e0b">
+          <div class="material-icon-wrap" style="--clr:#f59e0b">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h3>الدندريمرات</h3>
+          <p>هياكل نانوية بوليمرية شجرية بنيتها قابلة للتحكم لتوصيل الأدوية بدقة.</p>
+          <div class="tags">
+            <span class="tag">بنية ثلاثية الأبعاد</span>
+            <span class="tag">توصيل أدوية</span>
+          </div>
+          <span class="card-arrow"><i class="fas fa-arrow-left"></i></span>
+        </a>
+
+        <a href="nanomaterials.html#nanowires" class="material-card glass-card" data-color="#ec4899">
+          <div class="material-icon-wrap" style="--clr:#ec4899">
+            <i class="fas fa-wave-square"></i>
+          </div>
+          <h3>الأسلاك النانوية</h3>
+          <p>أسلاك معدنية أو شبه موصلة فائقة الرقة تُمكّن ترانزستورات وأجهزة استشعار الجيل القادم.</p>
+          <div class="tags">
+            <span class="tag">بنية أحادية البعد</span>
+            <span class="tag">إلكترونيات</span>
+          </div>
+          <span class="card-arrow"><i class="fas fa-arrow-left"></i></span>
+        </a>
+
+      </div>
+      <div class="section-cta">
+        <a href="nanomaterials.html" class="btn btn-primary">
+          <i class="fas fa-microscope"></i> عرض جميع المواد النانوية
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Section -->
+  <section class="section applications" id="applications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">التأثير في العالم الحقيقي</span>
+        <h2 class="section-title">تطبيقات <span class="gradient-text">تقنية النانو</span></h2>
+      </div>
+      <div class="app-timeline">
+        <div class="app-item">
+          <div class="app-icon"><i class="fas fa-heartbeat"></i></div>
+          <div class="app-content glass-card">
+            <h3>الطب والرعاية الصحية</h3>
+            <p>العلاج المستهدف للسرطان، وناقلات الأدوية النانوية، وأجهزة الاستشعار الحيوية، وعوامل التباين لـMRI
+              باستخدام جسيمات أكسيد الحديد فائقة الحساسية المغناطيسية.</p>
+            <ul>
+              <li>توصيل الأدوية بواسطة الليبوسومات</li>
+              <li>العلاج الحراري بالجسيمات الذهبية النانوية</li>
+              <li>أجهزة الاستشعار الحيوية النانوية للكشف المبكر عن الأمراض</li>
+            </ul>
+          </div>
+        </div>
+        <div class="app-item reverse">
+          <div class="app-icon"><i class="fas fa-solar-panel"></i></div>
+          <div class="app-content glass-card">
+            <h3>الطاقة والبيئة</h3>
+            <p>TiO₂ للتحفيز الضوئي لمعالجة المياه، خلايا شمسية محسّنة بأنابيب الكربون النانوية، وأقطاب نانوية عالية
+              السعة للبطاريات.</p>
+            <ul>
+              <li>بطاريات ليثيوم أيون من الجيل التالي</li>
+              <li>معالجة مياه الصرف بـTiO₂</li>
+              <li>خلايا شمسية بالأسلاك النانوية</li>
+            </ul>
+          </div>
+        </div>
+        <div class="app-item">
+          <div class="app-icon"><i class="fas fa-microchip"></i></div>
+          <div class="app-content glass-card">
+            <h3>الإلكترونيات والحوسبة</h3>
+            <p>ترانزستورات أنابيب الكربون النانوية التي تتجاوز السيليكون، وترانزستورات الجرافين، وشاشات النقاط الكمومية
+              (QLED).</p>
+            <ul>
+              <li>ترانزستورات أقل من 5 نانومتر</li>
+              <li>تقنية شاشات QLED</li>
+              <li>تقنية السبينترونيكس بالجسيمات المغناطيسية النانوية</li>
+            </ul>
+          </div>
+        </div>
+        <div class="app-item reverse">
+          <div class="app-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="app-content glass-card">
+            <h3>المواد والطلاءات</h3>
+            <p>مواد مركّبة نانوية للفضاء، وطلاءات ذاتية الإصلاح، وسطوح مقاومة للخدش باستخدام جسيمات ZnO النانوية وواقيات
+              الشمس الحاجبة للأشعة فوق البنفسجية.</p>
+            <ul>
+              <li>مواد دروع من المركّبات النانوية</li>
+              <li>طلاءات ذاتية التنظيف</li>
+              <li>أسطح مضادة للبكتيريا</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Did You Know Section -->
+  <section class="section did-you-know">
+    <div class="container">
+      <div class="dyk-wrapper">
+        <div class="dyk-header">
+          <i class="fas fa-lightbulb"></i>
+          <span>هل تعلم؟</span>
+        </div>
+        <div class="dyk-slider" id="dykSlider">
+          <p class="dyk-fact active">يمكن أن يكون الأنبوب النانوي <strong>أقوى ١٠٠ مرة</strong> من الفولاذ بكتلة تساوي
+            <strong>١/٦ وزنه</strong>.</p>
+          <p class="dyk-fact">تبدو الجسيمات الذهبية النانوية <strong>حمراء أو بنفسجية</strong> وليست ذهبية، بسبب ظاهرة
+            الرنين البلازموني السطحي.</p>
+          <p class="dyk-fact">جسيمات TiO₂ في واقي الشمس تمتص الأشعة فوق البنفسجية <strong>دون البياض الكثيف</strong>
+            لثاني أكسيد التيتانيوم الكبير.</p>
+          <p class="dyk-fact">يمكن ضبط النقاط الكمومية لإصدار أي لون ضوء ببساطة عن طريق <strong>تغيير حجمها</strong>.
+          </p>
+          <p class="dyk-fact">يمكن لأنبوب كربوني نانوي واحد أن يوصّل الإلكترونات أسرع من أي مادة معروفة عند درجة حرارة
+            الغرفة.</p>
+        </div>
+        <div class="dyk-dots" id="dykDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Prediction Section -->
+  <section class="section ai-predict" id="ai-predict">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">تطبيق عملي</span>
+        <h2 class="section-title">تنبؤ <span class="gradient-text">أكسيد المعدن</span> من الصورة</h2>
+        <p class="section-desc">
+          ارفع صورة لعيّنة نانوية ZnO أو NiO تم تحليلها بواسطة حيود الأشعة السينية (XRD)، وسيقوم النموذج المدرب بمعرفة نوع العينة وإرجاع الفئة المتوقعة مع نسبة الثقة.
+          تُعد تقنية XRD أداة أساسية لتحديد البنية البلورية، وتمييز الأطوار، وتقدير حجم البلورات النانوية من قمم الحيود، مما يمنح التحليل دقة علمية أعلى في توصيف العينات.
+        </p>
+      </div>
+
+      <div class="predict-panel glass-card">
+        <div class="predict-upload-wrap">
+          <label for="predictImage" class="upload-dropzone" id="uploadDropzone">
+            <input type="file" id="predictImage" accept="image/*" />
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>ارفع صورة لعيّنة نانوية ZnO أو NiO</p>
+            <small>الامتدادات المدعومة: JPG, PNG, WEBP</small>
+          </label>
+
+          <div class="predict-preview-wrap" id="predictPreviewWrap">
+            <img id="predictPreview" alt="معاينة الصورة المرفوعة" />
+          </div>
+        </div>
+
+        <div class="predict-actions">
+          <button class="btn btn-primary" id="predictBtn" type="button">
+            <i class="fas fa-microscope"></i> ابدأ التنبؤ
+          </button>
+          <p class="predict-status" id="predictStatus">بانتظار رفع صورة...</p>
+
+          <div class="predict-result" id="predictResult" hidden>
+            <h3>النتيجة</h3>
+            <p class="predict-main-label" id="predictLabel">-</p>
+            <p class="predict-main-confidence">الثقة: <span id="predictConfidence">-</span></p>
+            <div class="predict-confidence-meter" aria-hidden="true">
+              <div class="predict-confidence-fill" id="predictConfidenceFill"></div>
+            </div>
+            <ul class="predict-top-list" id="predictTopList"></ul>
+          </div>
+
+          <p class="predict-note">
+            ملاحظة: بعد رفع الصورة اضغط زر "ابدأ التنبؤ"، ويجب تشغيل خادم بايثون محليًا حتى يعمل التنبؤ.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section cta-banner">
+    <div class="container">
+      <div class="cta-content glass-card">
+        <h2>هل أنت مستعد للتعمق أكثر؟</h2>
+        <p>استكشف ملفات تفصيلية لكل صنف من المواد النانوية، وطرق تصنيعها وخصائصها.</p>
+        <div class="cta-btns">
+          <a href="nanomaterials.html" class="btn btn-primary"><i class="fas fa-book-open"></i> استكشف المواد</a>
+          <a href="about.html" class="btn btn-outline"><i class="fas fa-user-graduate"></i> حول المشروع</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon"><i class="fas fa-atom"></i></span>
+            <span class="logo-text">عالم <span class="accent">النانو</span></span>
+          </a>
+          <p class="footer-desc">مصدر تعليمي إبداعي لتقنية النانو والمواد النانوية للطلاب والباحثين في جميع أنحاء
+            العالم.</p>
+        </div>
+        <div class="footer-col">
+          <h4>التنقل</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="nanomaterials.html">المواد النانوية</a></li>
+            <li><a href="applications.html">التطبيقات</a></li>
+            <li><a href="about.html">حول المشروع</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>أنواع المواد</h4>
+          <ul>
+            <li><a href="nanomaterials.html#carbon-nanotubes">أنابيب الكربون النانوية</a></li>
+            <li><a href="nanomaterials.html#metal-oxides">أكاسيد المعادن</a></li>
+            <li><a href="nanomaterials.html#graphene">الجرافين</a></li>
+            <li><a href="nanomaterials.html#quantum-dots">النقاط الكمومية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>حقائق سريعة</h4>
+          <p class="footer-fact"><i class="fas fa-atom"></i> ١ نانومتر = ١٠⁻⁹ متر</p>
+          <p class="footer-fact"><i class="fas fa-circle-dot"></i> عرض الحمض النووي = ~٢ نانومتر</p>
+          <p class="footer-fact"><i class="fas fa-hair"></i> شعرة الإنسان = ٨٠٬٠٠٠ نانومتر</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; ٢٠٢٥ عالم النانو — مصدر تعليمي لتقنية النانو</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المواد النانوية — عالم النانو</title>
+  <meta name="description" content="استكشاف معمّق لأنواع المواد النانوية بما فيها أنابيب الكربون، أكاسيد المعادن، الجرافين، النقاط الكمومية، الدندريمرات، والأسلاك النانوية."/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <canvas id="particles-canvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fas fa-atom"></i></span>
+        <span class="logo-text">عالم <span class="accent">النانو</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+        <li><a href="nanomaterials.html" class="nav-link active">المواد النانوية</a></li>
+        <li><a href="applications.html" class="nav-link">التطبيقات</a></li>
+        <li><a href="about.html" class="nav-link">حول المشروع</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-tag animate-in delay-1">علم المواد</span>
+      <h1 class="animate-in delay-2">أنواع <span class="gradient-text">المواد النانوية</span></h1>
+      <p class="animate-in delay-3">من النقاط الكمومية صفرية الأبعاد إلى الهياكل النانوية ثلاثية الأبعاد — استكشف المشهد الكامل للمواد النانوية التي تُحوّل العلم والتكنولوجيا.</p>
+    </div>
+    <div class="dimension-guide animate-in delay-4">
+      <div class="dim-badge dim-0d"><span>0D</span><small>جسيمات نانوية<br>نقاط كمومية</small></div>
+      <div class="dim-badge dim-1d"><span>1D</span><small>أنابيب نانوية<br>أسلاك نانوية</small></div>
+      <div class="dim-badge dim-2d"><span>2D</span><small>جرافين<br>MXenes</small></div>
+      <div class="dim-badge dim-3d"><span>3D</span><small>دندريمرات<br>مركّبات نانوية</small></div>
+    </div>
+  </section>
+
+  <div class="filter-bar container">
+    <button class="filter-btn active" data-filter="all">جميع المواد</button>
+    <button class="filter-btn" data-filter="0d">0D</button>
+    <button class="filter-btn" data-filter="1d">1D</button>
+    <button class="filter-btn" data-filter="2d">2D</button>
+    <button class="filter-btn" data-filter="3d">3D</button>
+    <button class="filter-btn" data-filter="carbon">كربونية</button>
+    <button class="filter-btn" data-filter="metal">معدنية</button>
+  </div>
+
+  <main class="materials-detail-page container">
+
+    <!-- أنابيب الكربون النانوية -->
+    <article class="material-detail glass-card" id="carbon-nanotubes" data-dims="1d carbon">
+      <div class="md-header">
+        <div class="md-icon-wrap" style="--clr:#00f7ff"><i class="fas fa-circle-nodes"></i></div>
+        <div class="md-title">
+          <div class="md-badges">
+            <span class="dim-tag">بنية أحادية البعد</span>
+            <span class="type-tag type-carbon">كربونية</span>
+          </div>
+          <h2>أنابيب الكربون النانوية (CNTs)</h2>
+          <p class="md-formula">C (تهجين sp²)</p>
+        </div>
+      </div>
+
+      <div class="md-body">
+        <div class="md-section">
+          <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+          <p>أنابيب الكربون النانوية هي جزيئات أسطوانية مصنوعة من صفائح ملفوفة من ذرات الكربون أحادية الطبقة (الجرافين). اكتُشفت عام ١٩٩١ على يد سوميو إيجيما، ويمكن أن تكون أحادية الجدار (SWCNT) أو متعددة الجدران (MWCNT). يمكن أن تتجاوز نسبة الطول إلى القطر ١٬٠٠٠٬٠٠٠:١، مما يجعلها من أكثر المواد المعروفة بخاصية التباين.</p>
+        </div>
+
+        <div class="md-grid">
+          <div class="md-section">
+            <h3><i class="fas fa-cogs"></i> الأنواع</h3>
+            <div class="type-list">
+              <div class="type-item"><span class="type-dot" style="background:#00f7ff"></span><strong>SWCNT:</strong> صفيحة جرافين واحدة ملفوفة في أسطوانة (~١ نانومتر قطر)</div>
+              <div class="type-item"><span class="type-dot" style="background:#0095ff"></span><strong>MWCNT:</strong> أسطوانات جرافين متحدة المركز متعددة (٥–٥٠ نانومتر قطر)</div>
+              <div class="type-item"><span class="type-dot" style="background:#7b61ff"></span><strong>الالتواء:</strong> الكرسي (معدني)، الزيجزاج، أو الحلزوني — يتحكم في السلوك الكهربائي</div>
+            </div>
+          </div>
+          <div class="md-section">
+            <h3><i class="fas fa-flask"></i> طرق التوليف</h3>
+            <div class="type-list">
+              <div class="type-item"><span class="type-dot" style="background:#ff6b35"></span><strong>CVD:</strong> ترسيب البخار الكيميائي (الأكثر قابلية للتوسع)</div>
+              <div class="type-item"><span class="type-dot" style="background:#f59e0b"></span><strong>التفريغ القوسي:</strong> طريقة البلازما عالية الحرارة</div>
+              <div class="type-item"><span class="type-dot" style="background:#22c55e"></span><strong>الاستئصال بالليزر:</strong> SWCNTs عالية النقاء</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md-section">
+          <h3><i class="fas fa-chart-bar"></i> الخصائص الرئيسية</h3>
+          <div class="properties-grid">
+            <div class="prop-card"><span class="prop-val">~١ TPa</span><span class="prop-label">معامل يونج</span></div>
+            <div class="prop-card"><span class="prop-val">٦٣ GPa</span><span class="prop-label">مقاومة الشد</span></div>
+            <div class="prop-card"><span class="prop-val">٣٬٠٠٠ W/m·K</span><span class="prop-label">التوصيل الحراري</span></div>
+            <div class="prop-card"><span class="prop-val">١٠⁶ A/cm²</span><span class="prop-label">كثافة التيار</span></div>
+          </div>
+        </div>
+
+        <div class="md-section">
+          <h3><i class="fas fa-rocket"></i> التطبيقات</h3>
+          <div class="app-tags">
+            <span class="app-tag"><i class="fas fa-microchip"></i> ترانزستورات</span>
+            <span class="app-tag"><i class="fas fa-battery-full"></i> مكثّفات فائقة</span>
+            <span class="app-tag"><i class="fas fa-plane"></i> مركّبات فضائية</span>
+            <span class="app-tag"><i class="fas fa-heartbeat"></i> مستشعرات حيوية</span>
+            <span class="app-tag"><i class="fas fa-bolt"></i> أحبار موصلة</span>
+            <span class="app-tag"><i class="fas fa-dumbbell"></i> معدات رياضية</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- جسيمات أكاسيد المعادن النانوية -->
+    <article class="material-detail glass-card" id="metal-oxides" data-dims="0d metal">
+      <div class="md-header">
+        <div class="md-icon-wrap" style="--clr:#ff6b35"><i class="fas fa-cubes"></i></div>
+        <div class="md-title">
+          <div class="md-badges">
+            <span class="dim-tag">بنية صفرية البعد</span>
+            <span class="type-tag type-metal">معدنية</span>
+          </div>
+          <h2>جسيمات أكاسيد المعادن النانوية</h2>
+          <p class="md-formula">TiO₂ · ZnO · NiO · Fe₃O₄ · CeO₂ · Al₂O₃</p>
+        </div>
+      </div>
+
+      <div class="md-body">
+        <div class="md-section">
+          <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+          <p>جسيمات أكاسيد المعادن النانوية (MONPs) من أكثر المواد النانوية دراسةً وأهميةً تجاريًا. تجمع بين التنوع الوظيفي لكيمياء معادن الانتقال وخصائص المقياس النانوي الفريدة. أبرز أفرادها: ثاني أكسيد التيتانيوم (TiO₂)، أكسيد الزنك (ZnO)، أكسيد النيكل (NiO)، أكسيد الحديد (Fe₃O₄)، وأكسيد السيريوم (CeO₂).</p>
+        </div>
+
+        <div class="metal-oxide-showcase">
+          <div class="mox-card" style="--clr:#6366f1">
+            <div class="mox-formula">TiO₂</div>
+            <h4>ثاني أكسيد التيتانيوم</h4>
+            <p>محفّز ضوئي، حاجب للأشعة فوق البنفسجية في واقي الشمس، صبغة بيضاء، طلاءات ذاتية التنظيف. الشكل الأناتاسي هو الأكثر نشاطًا ضوئيًا.</p>
+            <div class="mox-tags"><span>تحفيز ضوئي</span><span>حماية UV</span><span>صبغة</span></div>
+          </div>
+          <div class="mox-card" style="--clr:#22c55e">
+            <div class="mox-formula">ZnO</div>
+            <h4>أكسيد الزنك</h4>
+            <p>كهرضغطي، يمتص الأشعة فوق البنفسجية، مضاد للميكروبات. يُستخدم في واقيات الشمس وأجهزة استشعار الغاز وأجهزة LED بسبب فجوة نطاقه الواسعة (٣٫٣٧ eV).</p>
+            <div class="mox-tags"><span>مضاد للميكروبات</span><span>كهرضغطي</span><span>استشعار الغاز</span></div>
+          </div>
+          <div class="mox-card" style="--clr:#f97316">
+            <div class="mox-formula">NiO</div>
+            <h4>أكسيد النيكل</h4>
+            <p>شبه موصل من النوع p يتميز بثبات حراري وكيميائي جيد. يُستخدم في أقطاب المكثفات الفائقة، وأجهزة الاستشعار الغازية، والطلاءات الكهروكرومية، كما يُظهر نشاطًا محفزًا في بعض تطبيقات التحفيز الضوئي.</p>
+            <div class="mox-tags"><span>شبه موصل p</span><span>مكثفات فائقة</span><span>استشعار الغاز</span></div>
+          </div>
+          <div class="mox-card" style="--clr:#ec4899">
+            <div class="mox-formula">Fe₃O₄</div>
+            <h4>المغنيتيت</h4>
+            <p>أكسيد حديد فائق التحسس المغناطيسي، يُستخدم في عوامل تباين الرنين المغناطيسي، وعلاج السرطان بالحرارة المغناطيسية، والفصل الحيوي.</p>
+            <div class="mox-tags"><span>تباين MRI</span><span>علاج حراري</span><span>توصيل أدوية</span></div>
+          </div>
+          <div class="mox-card" style="--clr:#f59e0b">
+            <div class="mox-formula">CeO₂</div>
+            <h4>أكسيد السيريوم</h4>
+            <p>خصائص مضادة للأكسدة ملحوظة بسبب التحوّل الأكسدي Ce³⁺/Ce⁴⁺. تطبيقات في حماية الأعصاب والتحفيز.</p>
+            <div class="mox-tags"><span>مضاد أكسدة</span><span>تحفيز</span><span>حماية الأعصاب</span></div>
+          </div>
+        </div>
+
+        <div class="md-section">
+          <h3><i class="fas fa-flask"></i> مناهج التوليف</h3>
+          <div class="synthesis-flow">
+            <div class="syn-step"><i class="fas fa-fire"></i><span>سول-جل</span></div>
+            <div class="syn-arrow">←</div>
+            <div class="syn-step"><i class="fas fa-droplet"></i><span>الترسيب المشترك</span></div>
+            <div class="syn-arrow">←</div>
+            <div class="syn-step"><i class="fas fa-temperature-high"></i><span>الطريقة الحرارية المائية</span></div>
+            <div class="syn-arrow">←</div>
+            <div class="syn-step"><i class="fas fa-leaf"></i><span>التوليف الأخضر</span></div>
+          </div>
+        </div>
+
+        <div class="md-section">
+          <h3><i class="fas fa-rocket"></i> التطبيقات</h3>
+          <div class="app-tags">
+            <span class="app-tag"><i class="fas fa-water"></i> تنقية المياه</span>
+            <span class="app-tag"><i class="fas fa-sun"></i> واقي الشمس / UV</span>
+            <span class="app-tag"><i class="fas fa-magnet"></i> تصوير MRI</span>
+            <span class="app-tag"><i class="fas fa-seedling"></i> الزراعة</span>
+            <span class="app-tag"><i class="fas fa-shield-virus"></i> مضادات الميكروبات</span>
+            <span class="app-tag"><i class="fas fa-paint-brush"></i> طلاءات</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- الجرافين -->
+    <article class="material-detail glass-card" id="graphene" data-dims="2d carbon">
+      <div class="md-header">
+        <div class="md-icon-wrap" style="--clr:#a855f7"><i class="fas fa-border-all"></i></div>
+        <div class="md-title">
+          <div class="md-badges">
+            <span class="dim-tag">بنية ثنائية البعد</span>
+            <span class="type-tag type-carbon">كربونية</span>
+          </div>
+          <h2>الجرافين</h2>
+          <p class="md-formula">طبقة واحدة من ذرات كربون sp² (شبكة سداسية)</p>
+        </div>
+      </div>
+
+      <div class="md-body">
+        <div class="md-section">
+          <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+          <p>الجرافين هو طبقة ذرية واحدة من ذرات الكربون مرتبة في شبكة ثنائية الأبعاد بشكل قرص العسل. عُزل عام ٢٠٠٤ بواسطة أندريه جيم وكونستانتين نوفوسيلوف (جائزة نوبل ٢٠١٠)، وهو أنحف وأقوى وأعلى مادة في التوصيل الكهربائي اكتُشفت حتى اليوم. يمثّل اللبنة الأساسية لمواد الكربون النانوية الأخرى (ملفوف = أنبوب نانوي، متراص = جرافيت).</p>
+        </div>
+        <div class="md-section">
+          <h3><i class="fas fa-chart-bar"></i> خصائص مذهلة</h3>
+          <div class="properties-grid">
+            <div class="prop-card"><span class="prop-val">~١ TPa</span><span class="prop-label">صلابة الشد</span></div>
+            <div class="prop-card"><span class="prop-val">٢٠٠٬٠٠٠ cm²/Vs</span><span class="prop-label">حركية الإلكترون</span></div>
+            <div class="prop-card"><span class="prop-val">٥٬٣٠٠ W/m·K</span><span class="prop-label">التوصيل الحراري</span></div>
+            <div class="prop-card"><span class="prop-val">٩٧٫٧٪</span><span class="prop-label">شفافية الضوء</span></div>
+          </div>
+        </div>
+        <div class="md-section">
+          <h3><i class="fas fa-rocket"></i> التطبيقات</h3>
+          <div class="app-tags">
+            <span class="app-tag"><i class="fas fa-tablet-screen-button"></i> شاشات مرنة</span>
+            <span class="app-tag"><i class="fas fa-battery-full"></i> بطاريات ليثيوم أيون</span>
+            <span class="app-tag"><i class="fas fa-filter"></i> ترشيح المياه</span>
+            <span class="app-tag"><i class="fas fa-wifi"></i> هوائيات 5G</span>
+            <span class="app-tag"><i class="fas fa-microscope"></i> فوتونيات</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- النقاط الكمومية -->
+    <article class="material-detail glass-card" id="quantum-dots" data-dims="0d">
+      <div class="md-header">
+        <div class="md-icon-wrap" style="--clr:#22c55e"><i class="fas fa-sun"></i></div>
+        <div class="md-title">
+          <div class="md-badges"><span class="dim-tag">بنية صفرية البعد</span><span class="type-tag type-semiconductor">شبه موصل</span></div>
+          <h2>النقاط الكمومية (QDs)</h2>
+          <p class="md-formula">CdSe · CdS · InP · PbS · نقاط كمومية برفسكايت</p>
+        </div>
+      </div>
+      <div class="md-body">
+        <div class="md-section">
+          <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+          <p>النقاط الكمومية هي بلورات نانوية شبه موصلة يتراوح قطرها عادةً بين ٢ و١٠ نانومتر. خاصيتها المميزة هي الفلورة القابلة للضبط بالحجم — كلما صغرت النقطة، ارتفعت طاقة الضوء المنبعث (أكثر زرقة). ينشأ ذلك من التقييد الكمومي: لا يمكن للإكسيتون الامتداد خارج حدود البلورة النانوية، مما يرفع الفجوة النطاقية مع صغر الحجم.</p>
+        </div>
+        <div class="qd-spectrum">
+          <div class="qd-dot" style="--size:8px;--color:#8b0000;--nm:700">٧٠٠ nm</div>
+          <div class="qd-dot" style="--size:7px;--color:#ff4500;--nm:640">٦٤٠ nm</div>
+          <div class="qd-dot" style="--size:6px;--color:#ffa500;--nm:580">٥٨٠ nm</div>
+          <div class="qd-dot" style="--size:5px;--color:#adff2f;--nm:530">٥٣٠ nm</div>
+          <div class="qd-dot" style="--size:4px;--color:#00bfff;--nm:480">٤٨٠ nm</div>
+          <div class="qd-dot" style="--size:3px;--color:#7b68ee;--nm:440">٤٤٠ nm</div>
+          <p class="qd-caption">نقاط أكبر ← موجة أطول (أحمر)؛ نقاط أصغر ← موجة أقصر (أزرق)</p>
+        </div>
+        <div class="md-section">
+          <h3><i class="fas fa-rocket"></i> التطبيقات</h3>
+          <div class="app-tags">
+            <span class="app-tag"><i class="fas fa-tv"></i> شاشات QLED</span>
+            <span class="app-tag"><i class="fas fa-sun"></i> خلايا شمسية</span>
+            <span class="app-tag"><i class="fas fa-syringe"></i> تصوير حيوي</span>
+            <span class="app-tag"><i class="fas fa-lightbulb"></i> إضاءة LED</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- الدندريمرات -->
+    <article class="material-detail glass-card" id="dendrimers" data-dims="3d">
+      <div class="md-header">
+        <div class="md-icon-wrap" style="--clr:#f59e0b"><i class="fas fa-snowflake"></i></div>
+        <div class="md-title">
+          <div class="md-badges"><span class="dim-tag">بنية ثلاثية الأبعاد</span><span class="type-tag type-polymer">بوليمر</span></div>
+          <h2>الدندريمرات</h2>
+          <p class="md-formula">PAMAM · PPI · دندريمرات بولي-L-ليسين</p>
+        </div>
+      </div>
+      <div class="md-body">
+        <div class="md-section">
+          <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+          <p>الدندريمرات هي جزيئات كبيرة شجرية التفرع الشديد يتم تصنيعها بصورة دقيقة ومتحكّم بها طبقةً تلو الأخرى. كل جيل (G0, G1, G2...) يضيف طبقة تفرع جديدة. يمكن لجوفها حمل الأدوية الكارهة للماء بينما يمكن تعديل سطحها لاستهداف الخلايا — مما يجعلها ناقلات صيدلانية نانوية مثالية.</p>
+        </div>
+        <div class="md-section">
+          <h3><i class="fas fa-rocket"></i> التطبيقات</h3>
+          <div class="app-tags">
+            <span class="app-tag"><i class="fas fa-pills"></i> توصيل الأدوية</span>
+            <span class="app-tag"><i class="fas fa-dna"></i> نقل الجينات</span>
+            <span class="app-tag"><i class="fas fa-microscope"></i> تباين MRI</span>
+            <span class="app-tag"><i class="fas fa-shield-virus"></i> عوامل مضادة للفيروسات</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- الأسلاك النانوية -->
+    <article class="material-detail glass-card" id="nanowires" data-dims="1d metal">
+      <div class="md-header">
+        <div class="md-icon-wrap" style="--clr:#ec4899"><i class="fas fa-wave-square"></i></div>
+        <div class="md-title">
+          <div class="md-badges"><span class="dim-tag">بنية أحادية البعد</span><span class="type-tag type-metal">معدنية</span></div>
+          <h2>الأسلاك النانوية</h2>
+          <p class="md-formula">Si · Ag · ZnO · GaN · InAs أسلاك نانوية</p>
+        </div>
+      </div>
+      <div class="md-body">
+        <div class="md-section">
+          <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+          <p>الأسلاك النانوية هياكل نانوية أحادية البعد بأقطار بين ١–١٠٠ نانومتر وأطوال تصل إلى عدة ميكرومترات. الأسلاك النانوية السيليكونية محورية في ترانزستورات الجيل التالي للرقائق دون ٣ نانومتر. الأسلاك الفضية النانوية تشكّل أقطابًا شفافة ومرنة. أسلاك ZnO النانوية كهرضغطية وضوئية كهربائية.</p>
+        </div>
+        <div class="md-section">
+          <h3><i class="fas fa-rocket"></i> التطبيقات</h3>
+          <div class="app-tags">
+            <span class="app-tag"><i class="fas fa-microchip"></i> إلكترونيات نانوية</span>
+            <span class="app-tag"><i class="fas fa-solar-panel"></i> خلايا شمسية</span>
+            <span class="app-tag"><i class="fas fa-temperature-high"></i> مستشعرات كيميائية</span>
+            <span class="app-tag"><i class="fas fa-tablet-screen-button"></i> إلكترونيات مرنة</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- جدول المقارنة -->
+  <section class="section container">
+    <div class="section-header">
+      <h2 class="section-title">مقارنة <span class="gradient-text">سريعة</span></h2>
+    </div>
+    <div class="table-wrapper glass-card">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>المادة</th>
+            <th>الأبعاد</th>
+            <th>نطاق الحجم</th>
+            <th>الخاصية الرئيسية</th>
+            <th>الاستخدام الأساسي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tbl-dot" style="background:#00f7ff"></span> أنابيب الكربون النانوية</td>
+            <td>1D</td>
+            <td>١–٥٠ نانومتر قطر</td>
+            <td>مقاومة ميكانيكية استثنائية</td>
+            <td>مركّبات، إلكترونيات</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#ff6b35"></span> أكاسيد المعادن (TiO₂)</td>
+            <td>0D</td>
+            <td>٥–١٠٠ نانومتر</td>
+            <td>تحفيز ضوئي</td>
+            <td>معالجة المياه، صبغات</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#f97316"></span> أكاسيد المعادن (NiO)</td>
+            <td>0D</td>
+            <td>١٠–٨٠ نانومتر</td>
+            <td>شبه موصل من النوع p</td>
+            <td>مكثفات فائقة، مستشعرات غاز</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#ff6b35"></span> أكاسيد المعادن (Fe₃O₄)</td>
+            <td>0D</td>
+            <td>٥–٢٠ نانومتر</td>
+            <td>فائقة التحسس المغناطيسي</td>
+            <td>MRI، توصيل أدوية</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#a855f7"></span> الجرافين</td>
+            <td>2D</td>
+            <td>٠٫٣٣٥ نانومتر سُمك</td>
+            <td>أعلى توصيلية</td>
+            <td>بطاريات، شاشات</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#22c55e"></span> النقاط الكمومية</td>
+            <td>0D</td>
+            <td>٢–١٠ نانومتر</td>
+            <td>فلورة قابلة للضبط</td>
+            <td>QLED، تصوير حيوي</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#f59e0b"></span> الدندريمرات</td>
+            <td>3D (متفرّع)</td>
+            <td>١–١٠ نانومتر</td>
+            <td>قابلية التحكم الوظيفي</td>
+            <td>توصيل الأدوية</td>
+          </tr>
+          <tr>
+            <td><span class="tbl-dot" style="background:#ec4899"></span> الأسلاك النانوية</td>
+            <td>1D</td>
+            <td>١–١٠٠ نانومتر قطر</td>
+            <td>تقييد كمومي</td>
+            <td>ترانزستورات، مستشعرات</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon"><i class="fas fa-atom"></i></span>
+            <span class="logo-text">عالم <span class="accent">النانو</span></span>
+          </a>
+          <p class="footer-desc">مصدر تعليمي لتقنية النانو.</p>
+        </div>
+        <div class="footer-col">
+          <h4>التنقل</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="nanomaterials.html">المواد النانوية</a></li>
+            <li><a href="applications.html">التطبيقات</a></li>
+            <li><a href="about.html">حول المشروع</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; ٢٠٢٥ عالم النانو — مصدر تعليمي لتقنية النانو</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

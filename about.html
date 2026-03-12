@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حول المشروع — عالم النانو</title>
+  <meta name="description" content="حول عالم النانو — منصة تعليمية لتقنية النانو تغطي المواد النانوية والتوليف والتطبيقات."/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+    .about-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .about-text p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-text p strong { color: var(--accent-cyan); }
+    .about-text .btn { margin-top: 12px; }
+
+    .about-features { display: flex; flex-direction: column; gap: 16px; }
+    .feature-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s;
+    }
+    .feature-row:hover {
+      border-color: var(--border-glow);
+      transform: translateX(-6px);
+    }
+    .feature-row-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(0,247,255,0.1);
+      border: 1px solid rgba(0,247,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+    .feature-row h4 {
+      font-family: var(--font-display);
+      font-size: 14px; font-weight: 700;
+      color: var(--text-primary); margin-bottom: 6px;
+    }
+    .feature-row p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+    .xrd-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+    .xrd-intro {
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+    .xrd-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 36px);
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .xrd-intro p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 15px;
+      margin: 0;
+    }
+    .xrd-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .xrd-card {
+      padding: 26px;
+      border-radius: 18px;
+    }
+    .xrd-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .xrd-subtitle {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin: 14px 0 8px;
+    }
+    .xrd-list, .xrd-steps {
+      margin: 0;
+      padding-right: 18px;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .xrd-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .xrd-grid { grid-template-columns: 1fr; }
+      .xrd-intro,
+      .xrd-card { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fas fa-atom"></i></span>
+        <span class="logo-text">عالم <span class="accent">النانو</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+        <li><a href="nanomaterials.html" class="nav-link">المواد النانوية</a></li>
+        <li><a href="applications.html" class="nav-link">التطبيقات</a></li>
+        <li><a href="about.html" class="nav-link active">حول المشروع</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <span class="section-tag animate-in delay-1">حول المشروع</span>
+    <h1 class="animate-in delay-2">حول <span class="gradient-text">عالم النانو</span></h1>
+    <p class="animate-in delay-3">مصدر تعليمي مفتوح يهدف إلى جعل تقنية النانو في متناول الطلاب والمعلمين والباحثين والعقول الفضولية في كل مكان.</p>
+  </section>
+
+  <!-- About Grid -->
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <h2>ما هو <span class="gradient-text">عالم النانو؟</span></h2>
+      <p>عالم النانو هي منصة تعليمية إبداعية مُكرّسة لاستكشاف العالم الرائع لـ<strong>تقنية النانو والمواد النانوية</strong>. نحن نُبسّط المفاهيم المعقدة في محتوى مرئي وسهل الفهم.</p>
+      <p>من الجرافين المعزول عام ٢٠٠٤ إلى شاشات النقاط الكمومية وأنظمة توصيل الأدوية النانوية اليوم، تطوّرت تقنية النانو لتصبح صناعة بمئات المليارات من الدولارات تُعيد تشكيل كل قطاع من قطاعات النشاط البشري.</p>
+      <p>هدفنا هو جعل هذا العلم المتطور في متناول الجميع — تقديم أساس متين للطلاب، وإلهام الجيل القادم من علماء النانو، وتوفير مرجع للمعلمين.</p>
+      <a href="nanomaterials.html" class="btn btn-primary"><i class="fas fa-flask"></i> استكشف المواد النانوية</a>
+    </div>
+    <div class="about-features">
+      <div class="feature-row reveal">
+        <div class="feature-row-icon"><i class="fas fa-book-open"></i></div>
+        <div>
+          <h4>تغطية شاملة</h4>
+          <p>ست فئات رئيسية من المواد النانوية مع خصائص تفصيلية وطرق التوليف والتطبيقات.</p>
+        </div>
+      </div>
+      <div class="feature-row reveal">
+        <div class="feature-row-icon"><i class="fas fa-microscope"></i></div>
+        <div>
+          <h4>دقة علمية</h4>
+          <p>محتوى مبني على مراجع علمية.</p>
+        </div>
+      </div>
+      <div class="feature-row reveal">
+        <div class="feature-row-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div>
+          <h4>تصميم يُقدّم التعليم أولاً</h4>
+          <p>مُصمَّم للمتعلمين من المستوى التمهيدي إلى المتقدم، مع وسائل بصرية وتصنيف الأبعاد.</p>
+        </div>
+      </div>
+      <div class="feature-row reveal">
+        <div class="feature-row-icon"><i class="fas fa-globe"></i></div>
+        <div>
+          <h4>مجاني ومفتوح المصدر</h4>
+          <p>لا دفعات، لا اشتراكات. المعرفة بتقنية النانو يجب أن تكون متاحة للجميع.</p>
+        </div>
+      </div>
+      <div class="feature-row reveal">
+        <div class="feature-row-icon"><i class="fas fa-paint-brush"></i></div>
+        <div>
+          <h4>تصميم تفاعلي حديث</h4>
+          <p>رسوم متحركة للجسيمات، وواجهة زجاجية، وانتقالات سلسة تجعل التعلم ممتعًا وجذابًا بصريًا.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="xrd-section">
+    <article class="glass-card xrd-intro reveal">
+      <h2>نظام ذكي لتحليل نتائج حيود الأشعة السينية (XRD)</h2>
+      <p>مصدر تعليمي مفتوح يهدف إلى جعل تقنية النانو في متناول الطلاب والمعلمين والباحثين والعقول الفضولية في كل مكان، من خلال تبسيط المفاهيم العلمية ودمجها بتطبيقات عملية قائمة على الذكاء الاصطناعي.</p>
+    </article>
+
+    <div class="xrd-grid">
+      <article class="glass-card xrd-card reveal">
+        <h3>تم تطوير نظام يعتمد على الذكاء الاصطناعي يقوم بـ:</h3>
+        <ul class="xrd-list">
+          <li>قراءة بيانات حيود الأشعة السينية (XRD).</li>
+          <li>تحليل الأنماط الطيفية تلقائيًا.</li>
+          <li>تحديد نوع أكسيد المعدن بدقة عالية.</li>
+          <li>إصدار تقرير فوري يتضمن النتيجة ونسبة الثقة.</li>
+        </ul>
+      </article>
+
+      <article class="glass-card xrd-card reveal">
+        <h3>كيف يعمل الحل؟</h3>
+        <ol class="xrd-steps">
+          <li>إدخال ملف نتائج XRD.</li>
+          <li>معالجة البيانات واستخراج الخصائص الطيفية.</li>
+          <li>تمرير البيانات إلى نموذج ذكاء اصطناعي مدرّب مسبقًا.</li>
+          <li>إخراج نوع الأكسيد (مثل ZnO وNiO) مع نسبة الثقة الإحصائية.</li>
+        </ol>
+      </article>
+    </div>
+
+    <div class="xrd-grid">
+      <article class="glass-card xrd-card reveal">
+        <h3>توظيف الذكاء الاصطناعي في النظام</h3>
+        <ul class="xrd-list">
+          <li>استخدام خوارزميات التعلم العميق (Deep Learning) لتحليل الأنماط المعقدة.</li>
+          <li>تدريب النموذج على قاعدة بيانات واسعة تضم أنماط XRD لأكاسيد معادن متعددة.</li>
+          <li>تطبيق تقنيات استخراج الخصائص (Feature Extraction) لاستخراج القمم الطيفية المميزة.</li>
+          <li>تحقيق دقة تصنيف مرتفعة (يتم ذكر النسبة الفعلية عند توفر نتائج الاختبار).</li>
+          <li>تحسين أداء النموذج من خلال Fine-Tuning وعمليات التحقق المتقاطع.</li>
+        </ul>
+      </article>
+
+      <article class="glass-card xrd-card reveal">
+        <h3>التقنيات المستخدمة</h3>
+        <ul class="xrd-list">
+          <li>شبكات عصبية تلافيفية (CNN) لمعالجة الأنماط الطيفية.</li>
+          <li>خوارزميات تصنيف متعددة الفئات (Multi-Class Classification).</li>
+          <li>تقنيات تحسين النموذج (Optimization &amp; Regularization).</li>
+        </ul>
+
+        <p class="xrd-subtitle">تتضمن كالآتي:</p>
+        <ul class="xrd-list">
+          <li>Python</li>
+          <li>TensorFlow</li>
+          <li>MobileNetV2 (Transfer Learning)</li>
+          <li>CNN Architecture</li>
+          <li>Data Augmentation</li>
+          <li>Fine-Tuning</li>
+          <li>Flask API</li>
+          <li>JSON-based Prediction Output</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="xrd-grid">
+      <article class="glass-card xrd-card reveal">
+        <h3>القيمة التقنية المضافة</h3>
+        <ul class="xrd-list">
+          <li>تقليل الاعتماد على الخبرة البشرية المتخصصة.</li>
+          <li>إزالة التحيز في تفسير النتائج.</li>
+          <li>قابلية التكامل مع أنظمة المختبرات (LIMS).</li>
+          <li>بنية قابلة للتطوير لدعم أنواع مواد إضافية مستقبلًا.</li>
+          <li>إمكانية التحول إلى نظام Decision Support System للمختبرات الصناعية.</li>
+        </ul>
+      </article>
+
+      <article class="glass-card xrd-card reveal">
+        <h3>المستفيدون</h3>
+        <ul class="xrd-list">
+          <li>المختبرات الجامعية.</li>
+          <li>المصانع وشركات المواد.</li>
+          <li>مراكز الأبحاث والتطوير.</li>
+          <li>الجهات الحكومية.</li>
+          <li>برامج الهندسة وعلوم المواد.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="xrd-grid">
+      <article class="glass-card xrd-card reveal">
+        <h3>نموذج العمل التجاري</h3>
+        <ul class="xrd-list">
+          <li>تقديم النظام كخدمة (Software as a Service - SaaS).</li>
+          <li>إمكانية ترخيص النظام للمختبرات التعليمية والصناعية.</li>
+          <li>تطوير نسخة احترافية مخصصة للشركات الكبرى.</li>
+        </ul>
+
+        <h3 class="xrd-subtitle">الميزة التنافسية</h3>
+        <ul class="xrd-list">
+          <li>تكلفة أقل.</li>
+          <li>سرعة تحليل أعلى.</li>
+          <li>تقليل الاعتماد على الخبراء المتخصصين.</li>
+          <li>تقليل التحيز البشري في تفسير النتائج.</li>
+        </ul>
+      </article>
+
+      <article class="glass-card xrd-card reveal">
+        <h3>الأثر المستدام</h3>
+
+        <p class="xrd-subtitle">الأثر الاقتصادي</p>
+        <ul class="xrd-list">
+          <li>تقليل تكاليف شراء مكتبات وبرمجيات تحليل XRD.</li>
+          <li>دعم التحول الرقمي في المختبرات.</li>
+        </ul>
+
+        <p class="xrd-subtitle">الأثر العلمي</p>
+        <ul class="xrd-list">
+          <li>تسريع وتيرة البحث العلمي.</li>
+          <li>تمكين الطلاب والباحثين من إجراء التحليل بشكل مستقل.</li>
+        </ul>
+
+        <p class="xrd-subtitle">الأثر التقني</p>
+        <ul class="xrd-list">
+          <li>توطين تقنيات التحليل الذكي محليًا.</li>
+          <li>بناء قاعدة بيانات وطنية لأنماط XRD.</li>
+          <li>دعم الابتكار في مجال تحليل المواد.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="xrd-grid">
+      <article class="glass-card xrd-card reveal">
+        <h3>نموذج الحل (Demo)</h3>
+        <ul class="xrd-list">
+          <li>عرض واجهة النظام.</li>
+          <li>إدخال ملف XRD.</li>
+          <li>تحليل البيانات لحظيًا.</li>
+          <li>إظهار نوع الأكسيد ونسبة الثقة.</li>
+        </ul>
+      </article>
+
+      <article class="glass-card xrd-card reveal">
+        <h3>الخاتمة الاستراتيجية</h3>
+        <p>يمثل هذا المشروع انتقالًا من تحليل تقليدي يعتمد على الخبرة الفردية إلى نظام ذكي قائم على البيانات وقابل للتوسع.</p>
+        <p style="margin-top: 12px;">الذكاء الاصطناعي هنا ليس أداة مساعدة فحسب، بل هو محرك لخفض التكلفة، ورفع الكفاءة، وتعزيز الاستقلال التقني في تحليل المواد المتقدمة.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon"><i class="fas fa-atom"></i></span>
+            <span class="logo-text">عالم <span class="accent">النانو</span></span>
+          </a>
+          <p class="footer-desc">مصدر تعليمي لتقنية النانو للطلاب والباحثين في جميع أنحاء العالم.</p>
+        </div>
+        <div class="footer-col">
+          <h4>التنقل</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="nanomaterials.html">المواد النانوية</a></li>
+            <li><a href="applications.html">التطبيقات</a></li>
+            <li><a href="about.html">حول المشروع</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; ٢٠٢٥ عالم النانو — مصدر تعليمي لتقنية النانو</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
