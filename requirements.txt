@@ -1,0 +1,13 @@
+numpy==1.26.4
+torch==2.2.0
+torchvision==0.17.0
+opencv-python==4.9.0
+matplotlib==3.8.0
+pandas==2.2.1
+scikit-learn==1.4.0
+flask==3.0.2
+
+write the below command, because the project works inside cnn_env:
+pip install -r requirements.txt
+or
+pip freeze > requirements.txt
