@@ -1,0 +1,17 @@
+Test Evaluation Report
+======================
+Validation accuracy: 66.67%
+Validation loss: 1.0657
+Test accuracy: 50.00%
+Test loss: 1.4276
+
+Confusion Matrix:
+[[0 2]
+ [0 2]]
+
+Classification Report:
+Class          Precision    Recall  F1-score   Support
+NiO                0.000     0.000     0.000         2
+Zno                0.500     1.000     0.667         2
+macro avg          0.250     0.500     0.333         4
+weighted avg       0.250     0.500     0.333         4
